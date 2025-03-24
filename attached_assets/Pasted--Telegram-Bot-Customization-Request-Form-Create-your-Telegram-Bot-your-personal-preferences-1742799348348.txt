@@ -1,0 +1,57 @@
+🤖📋 Telegram Bot Customization Request Form 📝
+Create your Telegram Bot (your personal preferences)
+Please 🧾 complete the details below to request a 🔧 customization for the Telegram 🤖 Bot. Submit 📤 this form to start your request ✅. 
+________________________________________
+👤 Requester Info:
+•	🧑 Name:
+________________________________________
+📊 Instrument Selection :
+📈 Equity Indices:
+☐ 💼 Dow Jones (DJIA)
+☐ 💻 Nasdaq 100
+☐ 📉 S&P 500
+☐ 🚗 Tesla (TSLA)
+☐ 🖥️ Nvidia (NVDA)
+☐ 🆕 Other : _________________________________________
+💱 Forex:
+☐ 🇪🇺/🇺🇸 EUR/USD
+☐ 🇬🇧/🇺🇸 GBP/USD
+☐ 🇺🇸/🇯🇵 USD/JPY
+☐ 🇦🇺/🇺🇸 AUD/USD
+☐ 🇺🇸/🇨🇦 USD/CAD
+☐ 🆕 Other : _________________________________________
+🛢️ Commodities:
+☐ 🪙 Gold (XAU/USD)
+☐ 🛢️ Crude Oil (WTI)
+☐ 🥈 Silver (XAG/USD)
+☐ 🆕 Other: _________________________________________
+________________________________________
+📈 Preferred Indicator(s):
+•	📝 Specify if different from defaults:
+⚙️ Default Indicators:
+•	📈 Equity Indices:
+• 📏 200-EMA (📉 trend/support-resistance)
+• 📊 MACD (🔄 momentum/trend)
+• 📉 RSI (📈 overbought/oversold)
+•	💱 Forex:
+• 📏 50-EMA (📉 trend/support-resistance)
+• 📊 MACD (📉 crossovers)
+• 📉 RSI (📈 overbought/oversold)
+•	🛢️ Commodities:
+• 📉 Bollinger Bands (📊 volatility)
+• 🔁 Super Trend (🔄 trend/reversals)
+• 📉 RSI (📉 exhaustion)
+☐ 🆕 Other Indicators (max 3 per instrument): ____________________________________________
+________________________________________
+🛡️ Who gets premium bot access?
+(⚠️ Must be a RoboForex 👨‍💼 client) ☐ 🤖 Robo Client
+☐ 🇮🇩 Indo Client
+☐ 🆕 Other: ____________________________
+📢 You can brand 🔖 this bot for selected VIP 💎 clients to boost value 💼 and promote RoboForex trading 🧮 under your ID.
+________________________________________
+🧾 Special Instructions or Requirements: (Please refer Brolysis (free) or BroPunch (premium))
+💬 Describe specific customizations, prompts, features, or notes:
+________________________________________
+________________________________________
+________________________________________
+________________________________________
