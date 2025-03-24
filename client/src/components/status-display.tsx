@@ -10,9 +10,9 @@ export function StatusDisplay({ latestSubmission }: StatusDisplayProps) {
   // If there's no submission, show the no submission status
   if (!latestSubmission) {
     return (
-      <div className="bg-white rounded-lg shadow-md border border-border mb-6">
-        <div className="bg-gray-800 text-white p-4 rounded-t-lg">
-          <h2 className="text-lg font-semibold">Request Status & Recent Submissions</h2>
+      <div className="bg-gray-100 rounded-lg shadow-md border-2 border-[#0088cc] mb-6 hover:shadow-lg transition-shadow duration-300">
+        <div className="bg-gray-200 p-4 rounded-t-lg">
+          <h2 className="text-lg font-semibold text-black">Request Status & Recent Submissions</h2>
         </div>
         <div className="p-4">
           <div className="text-center py-6">
@@ -56,9 +56,9 @@ export function StatusDisplay({ latestSubmission }: StatusDisplayProps) {
     : "-";
 
   return (
-    <div className="bg-white rounded-lg shadow-md border border-border mb-6">
-      <div className="bg-gray-800 text-white p-4 rounded-t-lg">
-        <h2 className="text-lg font-semibold">Request Status & Recent Submissions</h2>
+    <div className="bg-gray-100 rounded-lg shadow-md border-2 border-[#0088cc] mb-6 hover:shadow-lg transition-shadow duration-300">
+      <div className="bg-gray-200 p-4 rounded-t-lg">
+        <h2 className="text-lg font-semibold text-black">Request Status & Recent Submissions</h2>
       </div>
       <div className="p-4">
         <div className="flex items-center mb-4">

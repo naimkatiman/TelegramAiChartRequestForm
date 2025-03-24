@@ -35,20 +35,20 @@ export function SubmissionHistory({ latestSubmission }: SubmissionHistoryProps) 
   const getStatusBadgeColor = (status: string) => {
     switch (status) {
       case "completed":
-        return "bg-green-100 text-green-800";
+        return "bg-green-500 text-white font-medium";
       case "pending":
-        return "bg-blue-100 text-blue-800";
+        return "bg-[#0088cc] text-white font-medium";
       case "failed":
-        return "bg-red-100 text-red-800";
+        return "bg-red-500 text-white font-medium";
       default:
-        return "bg-gray-100 text-gray-800";
+        return "bg-gray-400 text-white font-medium";
     }
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md border border-border">
-      <div className="bg-gray-800 p-4 rounded-t-lg" style={{ display: 'none' }}>
-        <h2 className="text-lg font-semibold">Recent Submissions</h2>
+    <div className="bg-gray-100 rounded-lg shadow-md border-2 border-[#0088cc] hover:shadow-lg transition-shadow duration-300">
+      <div className="bg-gray-200 p-4 rounded-t-lg">
+        <h2 className="text-lg font-semibold text-black">Recent Submissions</h2>
       </div>
       <div className="p-4">
         {isLoading ? (
@@ -76,7 +76,7 @@ export function SubmissionHistory({ latestSubmission }: SubmissionHistoryProps) 
             {recentSubmissions.map((submission) => (
               <div 
                 key={submission.id} 
-                className="border border-border rounded-md p-3 hover:bg-muted transition-colors cursor-pointer"
+                className="border border-[#0088cc] rounded-md p-3 hover:bg-gray-200 transition-colors cursor-pointer bg-white"
               >
                 <div className="flex justify-between items-start">
                   <div>

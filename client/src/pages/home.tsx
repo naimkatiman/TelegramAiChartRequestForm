@@ -34,8 +34,8 @@ export default function Home() {
       
       <main className="flex-grow container mx-auto py-8 px-4 md:px-6 flex flex-col lg:flex-row gap-8">
         <div className="w-full lg:w-2/3">
-          <div className="bg-white rounded-lg shadow-md border border-border overflow-hidden">
-            <div className="bg-accent text-white p-6">
+          <div className="bg-gray-100 rounded-lg shadow-md border-2 border-[#0088cc] overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-gray-200 p-6">
               <h1 className="text-3xl font-bold mb-2 text-black">🤖 Telegram Bot Customization Request</h1>
               <p className="text-black">Configure your trading bot with preferred instruments and indicators</p>
             </div>
@@ -52,9 +52,9 @@ export default function Home() {
           <SubmissionHistory latestSubmission={latestSubmission} />
           
           {/* Help & Resources Section */}
-          <div className="bg-white rounded-lg shadow-md border border-border mt-6">
-            <div className="bg-accent text-white p-4 rounded-t-lg">
-              <h2 className="text-lg font-semibold">Help & Resources</h2>
+          <div className="bg-gray-100 rounded-lg shadow-md border-2 border-[#0088cc] mt-6 hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-gray-200 p-4 rounded-t-lg">
+              <h2 className="text-lg font-semibold text-black">Help & Resources</h2>
             </div>
             <div className="p-4">
               <div className="space-y-6">
