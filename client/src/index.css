@@ -35,12 +35,22 @@
   
   /* Target all form labels for a more muted appearance */
   label {
-    @apply text-gray-700 !important;
+    @apply text-gray-600 !important;
+  }
+  
+  /* Style form control labels */
+  .form-label {
+    @apply text-gray-600 !important;
   }
   
   /* Make section headers more subtle */
   h3.form-section-title {
-    @apply text-gray-800 !important;
+    @apply text-gray-700 !important;
+  }
+  
+  /* Style form section headers */
+  h2, h3 {
+    @apply text-gray-700 !important;
   }
   
   /* Style for form input text */
@@ -51,5 +61,20 @@
   /* Muted text styling for help text */
   .help-text {
     @apply text-gray-600 !important;
+  }
+  
+  /* Style form buttons */
+  .form-button {
+    @apply rounded-md transition-colors !important;
+  }
+  
+  /* Style primary button */
+  .primary-button {
+    @apply bg-[#0088cc]/90 hover:bg-[#0088cc] text-white !important;
+  }
+  
+  /* Style secondary button */
+  .secondary-button {
+    @apply bg-gray-100 text-gray-600 hover:bg-gray-200 border border-gray-300 !important;
   }
 }
