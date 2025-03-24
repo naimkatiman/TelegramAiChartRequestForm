@@ -190,7 +190,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
               name="otherEquity"
               render={({ field }) => (
                 <FormItem className="mt-2">
-                  <FormLabel className="text-sm font-medium text-accent">🆕 Other Equity Indices</FormLabel>
+                  <FormLabel className="text-sm font-medium text-accent">Other Equity Indices</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="Enter other equity indices"
@@ -256,7 +256,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
               name="otherForex"
               render={({ field }) => (
                 <FormItem className="mt-2">
-                  <FormLabel className="text-sm font-medium text-accent">🆕 Other Forex Pairs</FormLabel>
+                  <FormLabel className="text-sm font-medium text-accent">Other Forex Pairs</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="Enter other forex pairs"
@@ -322,7 +322,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
               name="otherCommodities"
               render={({ field }) => (
                 <FormItem className="mt-2">
-                  <FormLabel className="text-sm font-medium text-accent">🆕 Other Commodities</FormLabel>
+                  <FormLabel className="text-sm font-medium text-accent">Other Commodities</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="Enter other commodities"
@@ -341,11 +341,11 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-accent border-b pb-2">Preferred Indicators</h2>
           <div className="bg-muted p-4 rounded-md mb-4">
-            <h3 className="text-base font-medium text-accent mb-2">⚙️ Default Indicators</h3>
+            <h3 className="text-base font-medium text-accent mb-2">Default Indicators</h3>
             <div className="space-y-2 text-sm">
-              <p><strong>📈 Equity Indices:</strong> 200-EMA, MACD, RSI</p>
-              <p><strong>💱 Forex:</strong> 50-EMA, MACD, RSI</p>
-              <p><strong>🛢️ Commodities:</strong> Bollinger Bands, Super Trend, RSI</p>
+              <p><strong>Equity Indices:</strong> 200-EMA, MACD, RSI</p>
+              <p><strong>Forex:</strong> 50-EMA, MACD, RSI</p>
+              <p><strong>Commodities:</strong> Bollinger Bands, Super Trend, RSI</p>
             </div>
           </div>
           
@@ -354,7 +354,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
             name="customIndicators"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-sm font-medium text-accent">🆕 Custom Indicators (max 3 per instrument)</FormLabel>
+                <FormLabel className="text-sm font-medium text-accent">Custom Indicators (max 3 per instrument)</FormLabel>
                 <FormControl>
                   <Textarea
                     placeholder="Specify custom indicators if different from defaults"
@@ -371,7 +371,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
 
         {/* Premium Bot Access */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-accent border-b pb-2">🛡️ Premium Bot Access</h2>
+          <h2 className="text-xl font-semibold text-accent border-b pb-2">Premium Bot Access</h2>
           <p className="text-sm mb-3">Select who gets premium bot access (must be a RoboForex client)</p>
           
           <FormField
@@ -391,7 +391,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
                         <RadioGroupItem value="roboClient" />
                       </FormControl>
                       <FormLabel className="font-normal cursor-pointer">
-                        🤖 Robo Client
+                        Robo Client
                       </FormLabel>
                     </FormItem>
                     <FormItem className="flex items-center space-x-3 space-y-0">
@@ -399,7 +399,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
                         <RadioGroupItem value="indoClient" />
                       </FormControl>
                       <FormLabel className="font-normal cursor-pointer">
-                        🇮🇩 Indo Client
+                        Indo Client
                       </FormLabel>
                     </FormItem>
                     <FormItem className="flex items-center space-x-3 space-y-0">
@@ -407,7 +407,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
                         <RadioGroupItem value="other" />
                       </FormControl>
                       <FormLabel className="font-normal cursor-pointer">
-                        🆕 Other
+                        Other
                       </FormLabel>
                     </FormItem>
                   </RadioGroup>
@@ -437,7 +437,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           )}
           
           <div className="bg-muted p-4 rounded-md mt-2 border-l-4 border-[#0088cc]">
-            <p className="text-sm">📢 You can brand 🔖 this bot for selected VIP 💎 clients to boost value 💼 and promote RoboForex trading 🧮 under your ID.</p>
+            <p className="text-sm">You can brand this bot for selected VIP clients to boost value and promote RoboForex trading under your ID.</p>
           </div>
         </div>
 
