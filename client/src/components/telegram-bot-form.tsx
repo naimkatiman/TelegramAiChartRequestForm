@@ -66,27 +66,27 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
 
   // Equity indices options
   const equityIndicesOptions = [
-    { value: "DJIA", label: "💼 Dow Jones (DJIA)" },
-    { value: "NASDAQ", label: "💻 Nasdaq 100" },
-    { value: "SP500", label: "📉 S&P 500" },
-    { value: "TSLA", label: "🚗 Tesla (TSLA)" },
-    { value: "NVDA", label: "🖥️ Nvidia (NVDA)" },
+    { value: "DJIA", label: "Dow Jones (DJIA)" },
+    { value: "NASDAQ", label: "Nasdaq 100" },
+    { value: "SP500", label: "S&P 500" },
+    { value: "TSLA", label: "Tesla (TSLA)" },
+    { value: "NVDA", label: "Nvidia (NVDA)" },
   ];
 
   // Forex options
   const forexOptions = [
-    { value: "EURUSD", label: "🇪🇺/🇺🇸 EUR/USD" },
-    { value: "GBPUSD", label: "🇬🇧/🇺🇸 GBP/USD" },
-    { value: "USDJPY", label: "🇺🇸/🇯🇵 USD/JPY" },
-    { value: "AUDUSD", label: "🇦🇺/🇺🇸 AUD/USD" },
-    { value: "USDCAD", label: "🇺🇸/🇨🇦 USD/CAD" },
+    { value: "EURUSD", label: "EUR/USD" },
+    { value: "GBPUSD", label: "GBP/USD" },
+    { value: "USDJPY", label: "USD/JPY" },
+    { value: "AUDUSD", label: "AUD/USD" },
+    { value: "USDCAD", label: "USD/CAD" },
   ];
 
   // Commodities options
   const commoditiesOptions = [
-    { value: "XAUUSD", label: "🪙 Gold (XAU/USD)" },
-    { value: "CRUDEOIL", label: "🛢️ Crude Oil (WTI)" },
-    { value: "XAGUSD", label: "🥈 Silver (XAG/USD)" },
+    { value: "XAUUSD", label: "Gold (XAU/USD)" },
+    { value: "CRUDEOIL", label: "Crude Oil (WTI)" },
+    { value: "XAGUSD", label: "Silver (XAG/USD)" },
   ];
 
   return (
@@ -94,7 +94,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
       <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 space-y-8">
         {/* Requester Information */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-accent border-b pb-2">👤 Requester Information</h2>
+          <h2 className="text-xl font-semibold text-accent border-b pb-2">Requester Information</h2>
           
           <FormField
             control={form.control}
@@ -136,11 +136,11 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
 
         {/* Instrument Selection */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-accent border-b pb-2">📊 Instrument Selection</h2>
+          <h2 className="text-xl font-semibold text-accent border-b pb-2">Instrument Selection</h2>
           
           {/* Equity Indices */}
           <div>
-            <h3 className="text-lg font-medium text-accent mb-3">📈 Equity Indices</h3>
+            <h3 className="text-lg font-medium text-accent mb-3">Equity Indices</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <FormField
                 control={form.control}
@@ -206,7 +206,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           
           {/* Forex */}
           <div>
-            <h3 className="text-lg font-medium text-accent mb-3">💱 Forex</h3>
+            <h3 className="text-lg font-medium text-accent mb-3">Forex</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <FormField
                 control={form.control}
@@ -272,7 +272,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           
           {/* Commodities */}
           <div>
-            <h3 className="text-lg font-medium text-accent mb-3">🛢️ Commodities</h3>
+            <h3 className="text-lg font-medium text-accent mb-3">Commodities</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <FormField
                 control={form.control}
@@ -339,7 +339,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
 
         {/* Preferred Indicators */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-accent border-b pb-2">📈 Preferred Indicators</h2>
+          <h2 className="text-xl font-semibold text-accent border-b pb-2">Preferred Indicators</h2>
           <div className="bg-muted p-4 rounded-md mb-4">
             <h3 className="text-base font-medium text-accent mb-2">⚙️ Default Indicators</h3>
             <div className="space-y-2 text-sm">
