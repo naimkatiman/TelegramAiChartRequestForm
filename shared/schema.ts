@@ -19,6 +19,7 @@ export type User = typeof users.$inferSelect;
 // Bot submission schema
 export const botSubmissions = pgTable("bot_submissions", {
   id: serial("id").primaryKey(),
+  referenceCode: text("reference_code").notNull().unique(),
   requesterName: text("requester_name").notNull(),
   requesterEmail: text("requester_email").notNull(),
   equityIndices: jsonb("equity_indices"),
@@ -44,6 +45,8 @@ export const insertBotSubmissionSchema = createInsertSchema(botSubmissions).omit
 export const botSubmissionFormSchema = insertBotSubmissionSchema.extend({
   requesterName: z.string().min(2, { message: "Name must be at least 2 characters" }),
   requesterEmail: z.string().email({ message: "Please enter a valid email address" }),
+}).omit({
+  referenceCode: true,  // Reference code is generated server-side
 });
 
 export type InsertBotSubmission = z.infer<typeof insertBotSubmissionSchema>;

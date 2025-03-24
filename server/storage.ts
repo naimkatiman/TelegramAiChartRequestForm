@@ -12,6 +12,8 @@ export interface IStorage {
   
   // Bot submission methods
   getBotSubmission(id: number): Promise<BotSubmission | undefined>;
+  getBotSubmissionByReference(referenceCode: string): Promise<BotSubmission | undefined>;
+  getSubmissionsByEmail(email: string): Promise<BotSubmission[]>;
   getAllBotSubmissions(): Promise<BotSubmission[]>;
   createBotSubmission(submission: InsertBotSubmission): Promise<BotSubmission>;
   updateBotSubmissionStatus(id: number, status: string): Promise<BotSubmission | undefined>;
@@ -39,6 +41,19 @@ export class DatabaseStorage implements IStorage {
   async getBotSubmission(id: number): Promise<BotSubmission | undefined> {
     const [submission] = await db.select().from(botSubmissions).where(eq(botSubmissions.id, id));
     return submission;
+  }
+
+  async getBotSubmissionByReference(referenceCode: string): Promise<BotSubmission | undefined> {
+    const [submission] = await db.select().from(botSubmissions).where(eq(botSubmissions.referenceCode, referenceCode));
+    return submission;
+  }
+
+  async getSubmissionsByEmail(email: string): Promise<BotSubmission[]> {
+    return await db
+      .select()
+      .from(botSubmissions)
+      .where(eq(botSubmissions.requesterEmail, email))
+      .orderBy(botSubmissions.createdAt);
   }
 
   async getAllBotSubmissions(): Promise<BotSubmission[]> {
