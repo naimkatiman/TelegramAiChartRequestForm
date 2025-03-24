@@ -94,14 +94,14 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
       <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 space-y-8">
         {/* Requester Information */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-accent border-b pb-2">Requester Information</h2>
+          <h2 className="text-xl font-semibold text-gray-800 border-b pb-2">Requester Information</h2>
           
           <FormField
             control={form.control}
             name="requesterName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-accent">Full Name</FormLabel>
+                <FormLabel>Full Name</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Enter your name"
@@ -119,7 +119,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
             name="requesterEmail"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-accent">Email Address</FormLabel>
+                <FormLabel>Email Address</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Enter your email"
@@ -136,11 +136,11 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
 
         {/* Instrument Selection */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-accent border-b pb-2">Instrument Selection</h2>
+          <h2 className="text-xl font-semibold text-gray-800 border-b pb-2">Instrument Selection</h2>
           
           {/* Equity Indices */}
           <div>
-            <h3 className="text-lg font-medium text-accent mb-3">Equity Indices</h3>
+            <h3 className="text-lg font-medium text-gray-800 mb-3 form-section-title">Equity Indices</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <FormField
                 control={form.control}
@@ -206,7 +206,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           
           {/* Forex */}
           <div>
-            <h3 className="text-lg font-medium text-accent mb-3">Forex</h3>
+            <h3 className="text-lg font-medium text-gray-800 mb-3 form-section-title">Forex</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <FormField
                 control={form.control}
@@ -272,7 +272,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           
           {/* Commodities */}
           <div>
-            <h3 className="text-lg font-medium text-accent mb-3">Commodities</h3>
+            <h3 className="text-lg font-medium text-gray-800 mb-3 form-section-title">Commodities</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <FormField
                 control={form.control}
