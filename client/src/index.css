@@ -24,3 +24,22 @@
     @apply text-black/30 !important;
   }
 }
+
+/* Add custom styling for form elements */
+@layer components {
+  /* Override checkbox and radio button label styles */
+  .checkbox-label, 
+  .radio-label {
+    @apply text-gray-500 !important;
+  }
+  
+  /* Target all form labels for a more muted appearance */
+  label {
+    @apply text-gray-700 !important;
+  }
+  
+  /* Make section headers more subtle */
+  h3.form-section-title {
+    @apply text-gray-800 !important;
+  }
+}
