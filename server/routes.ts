@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { botSubmissionFormSchema } from "@shared/schema";
 import { ZodError } from "zod";
 import { fromZodError } from "zod-validation-error";
+import { generateReferenceCode } from "./utils";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Bot submission endpoints
@@ -41,8 +42,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Validate the submission data
       const validatedData = botSubmissionFormSchema.parse(req.body);
       
-      // Create the submission
-      const submission = await storage.createBotSubmission(validatedData);
+      // Generate a reference code
+      const referenceCode = generateReferenceCode();
+      
+      // Create the submission with the reference code
+      const submission = await storage.createBotSubmission({
+        ...validatedData,
+        referenceCode
+      });
       
       return res.status(201).json(submission);
     } catch (error) {
