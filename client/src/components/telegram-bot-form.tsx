@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { botSubmissionFormSchema, BotSubmissionFormValues, BotSubmission } from "@shared/schema";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -10,6 +10,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { createBotSubmission } from "@/api/submission";
 import { Loader2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { AnimatedHeader, AnimatedSection, AnimatedButton, AnimatedFormControls } from "@/components/form-animations";
 
 interface TelegramBotFormProps {
   onSubmissionSuccess: (submission: BotSubmission) => void;
@@ -91,10 +93,16 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 space-y-8">
+      <motion.form 
+        onSubmit={form.handleSubmit(onSubmit)} 
+        className="p-6 space-y-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         {/* Requester Information */}
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-gray-800 border-b pb-2">Requester Information</h2>
+        <AnimatedSection delay={0}>
+          <AnimatedHeader delay={0}>Requester Information</AnimatedHeader>
           
           <FormField
             control={form.control}
@@ -132,11 +140,11 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
               </FormItem>
             )}
           />
-        </div>
+        </AnimatedSection>
 
         {/* Instrument Selection */}
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold border-b pb-2">Instrument Selection</h2>
+        <AnimatedSection delay={0.1}>
+          <AnimatedHeader delay={0.1}>Instrument Selection</AnimatedHeader>
           
           {/* Equity Indices */}
           <div>
@@ -335,11 +343,11 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
               )}
             />
           </div>
-        </div>
+        </AnimatedSection>
 
         {/* Preferred Indicators */}
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold border-b pb-2">Preferred Indicators</h2>
+        <AnimatedSection delay={0.2}>
+          <AnimatedHeader delay={0.2}>Preferred Indicators</AnimatedHeader>
           <div className="bg-muted p-4 rounded-md mb-4">
             <h3 className="text-base font-medium mb-2 form-section-title">Default Indicators</h3>
             <div className="space-y-2 text-sm text-muted-foreground">
@@ -367,11 +375,11 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
               </FormItem>
             )}
           />
-        </div>
+        </AnimatedSection>
 
         {/* Premium Bot Access */}
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold border-b pb-2">Premium Bot Access</h2>
+        <AnimatedSection delay={0.3}>
+          <AnimatedHeader delay={0.3}>Premium Bot Access</AnimatedHeader>
           <p className="text-sm text-muted-foreground mb-3">Select who gets premium bot access. Please note that verification will take time (approximately 1 day) and requires a Telegram ID to proceed.</p>
           
           <FormField
@@ -447,11 +455,11 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           <div className="bg-muted p-4 rounded-md mt-2 border-l-4 border-[#0088cc]">
             <p className="text-sm text-muted-foreground">You can brand this bot for selected VIP clients to boost value and promote RoboForex trading under your ID. A Telegram ID will be required during the verification process.</p>
           </div>
-        </div>
+        </AnimatedSection>
 
         {/* Special Instructions */}
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold border-b pb-2">Special Instructions</h2>
+        <AnimatedSection delay={0.4}>
+          <AnimatedHeader delay={0.4}>Special Instructions</AnimatedHeader>
           <p className="text-sm text-muted-foreground mb-2">Please refer to Brolysis (free) or BroPunch (premium) for reference</p>
           
           <FormField
@@ -471,40 +479,44 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
               </FormItem>
             )}
           />
-        </div>
+        </AnimatedSection>
 
         {/* Form Controls */}
-        <div className="flex flex-wrap justify-between pt-4 border-t border-border">
-          <Button
-            type="button"
-            variant="outline"
-            onClick={handleReset}
-            className="px-6 py-2 form-button secondary-button flex items-center"
-          >
-            Reset Form
-          </Button>
+        <AnimatedFormControls>
+          <AnimatedButton>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={handleReset}
+              className="px-6 py-2 form-button secondary-button flex items-center"
+            >
+              Reset Form
+            </Button>
+          </AnimatedButton>
           
-          <Button
-            type="submit"
-            disabled={isSubmitting}
-            className="px-6 py-2 form-button primary-button flex items-center"
-          >
-            {isSubmitting ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Submitting...
-              </>
-            ) : (
-              <>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-                </svg>
-                Submit Request
-              </>
-            )}
-          </Button>
-        </div>
-      </form>
+          <AnimatedButton>
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="px-6 py-2 form-button primary-button flex items-center"
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                <>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+                  </svg>
+                  Submit Request
+                </>
+              )}
+            </Button>
+          </AnimatedButton>
+        </AnimatedFormControls>
+      </motion.form>
     </Form>
   );
 }
