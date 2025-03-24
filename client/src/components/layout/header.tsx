@@ -10,13 +10,7 @@ export function Header() {
           </svg>
           <span className="ml-2 text-xl font-semibold">Telegram Bot Customization</span>
         </div>
-        <nav>
-          <ul className="flex space-x-6">
-            <li><Link href="/" className="text-white hover:text-[#0088cc] transition-colors">Dashboard</Link></li>
-            <li><Link href="/history" className="text-white hover:text-[#0088cc] transition-colors">History</Link></li>
-            <li><Link href="/support" className="text-white hover:text-[#0088cc] transition-colors">Support</Link></li>
-          </ul>
-        </nav>
+        {/* Navigation links removed */}
       </div>
     </header>
   );
