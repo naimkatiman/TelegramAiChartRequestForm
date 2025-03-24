@@ -11,7 +11,7 @@ export function StatusDisplay({ latestSubmission }: StatusDisplayProps) {
   if (!latestSubmission) {
     return (
       <div className="bg-white rounded-lg shadow-md border border-border mb-6">
-        <div className="bg-accent text-white p-4 rounded-t-lg">
+        <div className="bg-gray-800 text-white p-4 rounded-t-lg">
           <h2 className="text-lg font-semibold">Request Status</h2>
         </div>
         <div className="p-4">
@@ -57,7 +57,7 @@ export function StatusDisplay({ latestSubmission }: StatusDisplayProps) {
 
   return (
     <div className="bg-white rounded-lg shadow-md border border-border mb-6">
-      <div className="bg-accent text-white p-4 rounded-t-lg">
+      <div className="bg-gray-800 text-white p-4 rounded-t-lg">
         <h2 className="text-lg font-semibold">Request Status</h2>
       </div>
       <div className="p-4">

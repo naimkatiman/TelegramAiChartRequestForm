@@ -42,4 +42,14 @@
   h3.form-section-title {
     @apply text-gray-800 !important;
   }
+  
+  /* Style for form input text */
+  .form-input-text {
+    @apply text-gray-800 !important;
+  }
+  
+  /* Muted text styling for help text */
+  .help-text {
+    @apply text-gray-600 !important;
+  }
 }

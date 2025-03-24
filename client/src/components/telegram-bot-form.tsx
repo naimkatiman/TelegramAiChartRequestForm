@@ -342,7 +342,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           <h2 className="text-xl font-semibold text-gray-800 border-b pb-2">Preferred Indicators</h2>
           <div className="bg-muted p-4 rounded-md mb-4">
             <h3 className="text-base font-medium text-gray-800 mb-2 form-section-title">Default Indicators</h3>
-            <div className="space-y-2 text-sm">
+            <div className="space-y-2 text-sm text-gray-700">
               <p><strong>Equity Indices:</strong> 200-EMA, MACD, RSI</p>
               <p><strong>Forex:</strong> 50-EMA, MACD, RSI</p>
               <p><strong>Commodities:</strong> Bollinger Bands, Super Trend, RSI</p>
@@ -372,7 +372,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
         {/* Premium Bot Access */}
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-gray-800 border-b pb-2">Premium Bot Access</h2>
-          <p className="text-sm mb-3">Select who gets premium bot access (must be a RoboForex client)</p>
+          <p className="text-sm text-gray-600 mb-3">Select who gets premium bot access (must be a RoboForex client)</p>
           
           <FormField
             control={form.control}
@@ -437,14 +437,14 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           )}
           
           <div className="bg-muted p-4 rounded-md mt-2 border-l-4 border-[#0088cc]">
-            <p className="text-sm">You can brand this bot for selected VIP clients to boost value and promote RoboForex trading under your ID.</p>
+            <p className="text-sm text-gray-700">You can brand this bot for selected VIP clients to boost value and promote RoboForex trading under your ID.</p>
           </div>
         </div>
 
         {/* Special Instructions */}
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-gray-800 border-b pb-2">Special Instructions</h2>
-          <p className="text-sm mb-2">Please refer to Brolysis (free) or BroPunch (premium) for reference</p>
+          <p className="text-sm text-gray-600 mb-2">Please refer to Brolysis (free) or BroPunch (premium) for reference</p>
           
           <FormField
             control={form.control}
@@ -471,7 +471,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
             type="button"
             variant="outline"
             onClick={handleReset}
-            className="px-6 py-2 bg-input-background text-accent border border-border rounded-md hover:bg-muted transition-colors"
+            className="px-6 py-2 bg-input-background text-gray-700 border border-gray-300 rounded-md hover:bg-muted transition-colors"
           >
             Reset Form
           </Button>
