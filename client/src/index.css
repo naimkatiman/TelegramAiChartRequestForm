@@ -11,16 +11,16 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
   
-  /* Make placeholder text more subtle - grey with very low opacity */
+  /* Make placeholder text more subtle - black font with very low opacity */
   ::placeholder {
-    @apply text-gray-400/30 !important;
+    @apply text-black/30 !important;
   }
   
   ::-webkit-input-placeholder {
-    @apply text-gray-400/30 !important;
+    @apply text-black/30 !important;
   }
   
   :-ms-input-placeholder {
-    @apply text-gray-400/30 !important;
+    @apply text-black/30 !important;
   }
 }
