@@ -12,7 +12,7 @@ export function StatusDisplay({ latestSubmission }: StatusDisplayProps) {
     return (
       <div className="bg-white rounded-lg shadow-md border border-border mb-6">
         <div className="bg-gray-800 text-white p-4 rounded-t-lg">
-          <h2 className="text-lg font-semibold">Request Status</h2>
+          <h2 className="text-lg font-semibold">Request Status & Recent Submissions</h2>
         </div>
         <div className="p-4">
           <div className="text-center py-6">
@@ -58,7 +58,7 @@ export function StatusDisplay({ latestSubmission }: StatusDisplayProps) {
   return (
     <div className="bg-white rounded-lg shadow-md border border-border mb-6">
       <div className="bg-gray-800 text-white p-4 rounded-t-lg">
-        <h2 className="text-lg font-semibold">Request Status</h2>
+        <h2 className="text-lg font-semibold">Request Status & Recent Submissions</h2>
       </div>
       <div className="p-4">
         <div className="flex items-center mb-4">

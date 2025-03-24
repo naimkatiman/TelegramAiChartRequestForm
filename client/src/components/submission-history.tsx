@@ -47,7 +47,7 @@ export function SubmissionHistory({ latestSubmission }: SubmissionHistoryProps) 
 
   return (
     <div className="bg-white rounded-lg shadow-md border border-border">
-      <div className="bg-gray-800 text-white p-4 rounded-t-lg">
+      <div className="bg-gray-800 p-4 rounded-t-lg" style={{ display: 'none' }}>
         <h2 className="text-lg font-semibold">Recent Submissions</h2>
       </div>
       <div className="p-4">

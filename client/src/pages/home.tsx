@@ -37,7 +37,7 @@ export default function Home() {
           <div className="bg-white rounded-lg shadow-md border border-border overflow-hidden">
             <div className="bg-accent text-white p-6">
               <h1 className="text-2xl font-semibold mb-2">🤖 Telegram Bot Customization Request</h1>
-              <p className="text-gray-300">Configure your trading bot with preferred instruments and indicators</p>
+              <p className="text-black">Configure your trading bot with preferred instruments and indicators</p>
             </div>
             
             <TelegramBotForm 
@@ -62,13 +62,13 @@ export default function Home() {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#0088cc]" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
                   </svg>
-                  <a href="#" className="text-accent hover:text-[#0088cc] transition-colors">Bot Documentation</a>
+                  <a href="#" className="text-black hover:text-[#0088cc] transition-colors">Bot Documentation</a>
                 </li>
                 <li className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#0088cc]" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
                   </svg>
-                  <a href="#" className="text-accent hover:text-[#0088cc] transition-colors">Trading Indicators Guide</a>
+                  <a href="#" className="text-black hover:text-[#0088cc] transition-colors">Trading Indicators Guide</a>
                 </li>
                 <li className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#0088cc]" viewBox="0 0 20 20" fill="currentColor">
