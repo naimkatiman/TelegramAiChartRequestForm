@@ -16,11 +16,11 @@ export function StatusDisplay({ latestSubmission }: StatusDisplayProps) {
         </div>
         <div className="p-4">
           <div className="text-center py-6">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto text-text opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
             </svg>
-            <p className="mt-4 text-text">No request submitted yet</p>
-            <p className="text-sm text-text opacity-75">Your submission status will appear here</p>
+            <p className="mt-4 text-gray-700">No request submitted yet</p>
+            <p className="text-sm text-gray-500">Your submission status will appear here</p>
           </div>
         </div>
       </div>
@@ -66,11 +66,11 @@ export function StatusDisplay({ latestSubmission }: StatusDisplayProps) {
             <StatusIcon className="h-5 w-5" />
           </div>
           <div>
-            <h3 className="font-medium text-accent">{statusTitle}</h3>
-            <p className="text-sm text-text">{statusMessage}</p>
+            <h3 className="font-medium text-gray-800">{statusTitle}</h3>
+            <p className="text-sm text-gray-600">{statusMessage}</p>
           </div>
         </div>
-        <div className="text-sm text-text">
+        <div className="text-sm text-gray-500">
           <p>Submitted on {timestamp}</p>
         </div>
       </div>
