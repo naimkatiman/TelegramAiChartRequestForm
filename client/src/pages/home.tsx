@@ -59,22 +59,22 @@ export default function Home() {
             <div className="p-4">
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-bold text-black mb-2">Available Symbols</h3>
+                  <h3 className="text-lg text-black mb-2">Available Symbols</h3>
                   <a href="https://doc.chart-img.com/#tradingview-symbols" 
                      target="_blank" 
                      rel="noopener noreferrer" 
                      className="text-[#0088cc] hover:underline">
-                    https://doc.chart-img.com/#tradingview-symbols
+                    View supported symbols
                   </a>
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-bold text-black mb-2">Available Indicators</h3>
+                  <h3 className="text-lg text-black mb-2">Available Indicators</h3>
                   <a href="https://doc.chart-img.com/#tradingview-chart-indicators" 
                      target="_blank" 
                      rel="noopener noreferrer" 
                      className="text-[#0088cc] hover:underline">
-                    https://doc.chart-img.com/#tradingview-chart-indicators
+                    View supported indicators
                   </a>
                 </div>
               </div>
