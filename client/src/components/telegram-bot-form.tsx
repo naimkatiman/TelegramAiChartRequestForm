@@ -136,11 +136,11 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
 
         {/* Instrument Selection */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-gray-800 border-b pb-2">Instrument Selection</h2>
+          <h2 className="text-xl font-semibold border-b pb-2">Instrument Selection</h2>
           
           {/* Equity Indices */}
           <div>
-            <h3 className="text-lg font-medium text-gray-800 mb-3 form-section-title">Equity Indices</h3>
+            <h3 className="text-lg font-medium mb-3 form-section-title">Equity Indices</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <FormField
                 control={form.control}
@@ -206,7 +206,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           
           {/* Forex */}
           <div>
-            <h3 className="text-lg font-medium text-gray-800 mb-3 form-section-title">Forex</h3>
+            <h3 className="text-lg font-medium mb-3 form-section-title">Forex</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <FormField
                 control={form.control}
@@ -272,7 +272,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           
           {/* Commodities */}
           <div>
-            <h3 className="text-lg font-medium text-gray-800 mb-3 form-section-title">Commodities</h3>
+            <h3 className="text-lg font-medium mb-3 form-section-title">Commodities</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <FormField
                 control={form.control}
@@ -339,10 +339,10 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
 
         {/* Preferred Indicators */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-gray-800 border-b pb-2">Preferred Indicators</h2>
+          <h2 className="text-xl font-semibold border-b pb-2">Preferred Indicators</h2>
           <div className="bg-muted p-4 rounded-md mb-4">
-            <h3 className="text-base font-medium text-gray-800 mb-2 form-section-title">Default Indicators</h3>
-            <div className="space-y-2 text-sm text-gray-700">
+            <h3 className="text-base font-medium mb-2 form-section-title">Default Indicators</h3>
+            <div className="space-y-2 text-sm text-muted-foreground">
               <p><strong>Equity Indices:</strong> 200-EMA, MACD, RSI</p>
               <p><strong>Forex:</strong> 50-EMA, MACD, RSI</p>
               <p><strong>Commodities:</strong> Bollinger Bands, Super Trend, RSI</p>
@@ -371,7 +371,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
 
         {/* Premium Bot Access */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-gray-800 border-b pb-2">Premium Bot Access</h2>
+          <h2 className="text-xl font-semibold border-b pb-2">Premium Bot Access</h2>
           <p className="text-sm text-gray-600 mb-3">Select who gets premium bot access (must be a RoboForex client)</p>
           
           <FormField
@@ -443,7 +443,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
 
         {/* Special Instructions */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-gray-800 border-b pb-2">Special Instructions</h2>
+          <h2 className="text-xl font-semibold border-b pb-2">Special Instructions</h2>
           <p className="text-sm text-gray-600 mb-2">Please refer to Brolysis (free) or BroPunch (premium) for reference</p>
           
           <FormField
@@ -471,7 +471,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
             type="button"
             variant="outline"
             onClick={handleReset}
-            className="px-6 py-2 bg-input-background text-gray-700 border border-gray-300 rounded-md hover:bg-muted transition-colors"
+            className="px-6 py-2 form-button secondary-button flex items-center"
           >
             Reset Form
           </Button>
@@ -479,7 +479,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="px-6 py-2 bg-[#0088cc] text-white rounded-md hover:bg-opacity-90 transition-colors flex items-center"
+            className="px-6 py-2 form-button primary-button flex items-center"
           >
             {isSubmitting ? (
               <>
