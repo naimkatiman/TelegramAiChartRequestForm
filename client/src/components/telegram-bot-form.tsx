@@ -372,7 +372,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
         {/* Premium Bot Access */}
         <div className="space-y-4">
           <h2 className="text-xl font-semibold border-b pb-2">Premium Bot Access</h2>
-          <p className="text-sm text-gray-600 mb-3">Select who gets premium bot access (must be a RoboForex client)</p>
+          <p className="text-sm text-muted-foreground mb-3">Select who gets premium bot access. Please note that verification will take time (approximately 1 day) and requires a Telegram ID to proceed.</p>
           
           <FormField
             control={form.control}
@@ -388,18 +388,26 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
                   >
                     <FormItem className="flex items-center space-x-3 space-y-0">
                       <FormControl>
-                        <RadioGroupItem value="roboClient" />
+                        <RadioGroupItem value="telegramGroup" />
                       </FormControl>
                       <FormLabel className="font-normal cursor-pointer">
-                        Robo Client
+                        Telegram Group
                       </FormLabel>
                     </FormItem>
                     <FormItem className="flex items-center space-x-3 space-y-0">
                       <FormControl>
-                        <RadioGroupItem value="indoClient" />
+                        <RadioGroupItem value="fbGroup" />
                       </FormControl>
                       <FormLabel className="font-normal cursor-pointer">
-                        Indo Client
+                        FB Group
+                      </FormLabel>
+                    </FormItem>
+                    <FormItem className="flex items-center space-x-3 space-y-0">
+                      <FormControl>
+                        <RadioGroupItem value="personalSelection" />
+                      </FormControl>
+                      <FormLabel className="font-normal cursor-pointer">
+                        Personal Selection (Recommended)
                       </FormLabel>
                     </FormItem>
                     <FormItem className="flex items-center space-x-3 space-y-0">
@@ -437,14 +445,14 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           )}
           
           <div className="bg-muted p-4 rounded-md mt-2 border-l-4 border-[#0088cc]">
-            <p className="text-sm text-gray-700">You can brand this bot for selected VIP clients to boost value and promote RoboForex trading under your ID.</p>
+            <p className="text-sm text-muted-foreground">You can brand this bot for selected VIP clients to boost value and promote RoboForex trading under your ID. A Telegram ID will be required during the verification process.</p>
           </div>
         </div>
 
         {/* Special Instructions */}
         <div className="space-y-4">
           <h2 className="text-xl font-semibold border-b pb-2">Special Instructions</h2>
-          <p className="text-sm text-gray-600 mb-2">Please refer to Brolysis (free) or BroPunch (premium) for reference</p>
+          <p className="text-sm text-muted-foreground mb-2">Please refer to Brolysis (free) or BroPunch (premium) for reference</p>
           
           <FormField
             control={form.control}
