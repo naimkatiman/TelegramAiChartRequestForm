@@ -9,7 +9,18 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { createBotSubmission } from "@/api/submission";
-import { Loader2 } from "lucide-react";
+import { 
+  Loader2, 
+  LineChart, 
+  DollarSign, 
+  Gem, 
+  TrendingUp,
+  MessageCircle,
+  Users,
+  Facebook,
+  User,
+  HelpCircle
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedHeader, AnimatedSection, AnimatedButton, AnimatedFormControls } from "@/components/form-animations";
 
@@ -122,24 +133,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
             )}
           />
           
-          <FormField
-            control={form.control}
-            name="requesterEmail"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email Address</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Enter your email"
-                    type="email"
-                    {...field}
-                    className="px-4 py-2 border border-border rounded-md bg-input-background focus:outline-none"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          {/* Email field removed as requested */}
         </AnimatedSection>
 
         {/* Instrument Selection */}
@@ -148,7 +142,10 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           
           {/* Equity Indices */}
           <div>
-            <h3 className="text-lg font-medium mb-3 form-section-title">Equity Indices</h3>
+            <h3 className="text-lg font-medium mb-3 form-section-title flex items-center">
+              <LineChart className="h-5 w-5 mr-2 text-[#0088cc]" />
+              Equity Indices
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <FormField
                 control={form.control}
@@ -214,7 +211,10 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           
           {/* Forex */}
           <div>
-            <h3 className="text-lg font-medium mb-3 form-section-title">Forex</h3>
+            <h3 className="text-lg font-medium mb-3 form-section-title flex items-center">
+              <DollarSign className="h-5 w-5 mr-2 text-[#0088cc]" />
+              Forex
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <FormField
                 control={form.control}
@@ -280,7 +280,10 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
           
           {/* Commodities */}
           <div>
-            <h3 className="text-lg font-medium mb-3 form-section-title">Commodities</h3>
+            <h3 className="text-lg font-medium mb-3 form-section-title flex items-center">
+              <Gem className="h-5 w-5 mr-2 text-[#0088cc]" />
+              Commodities
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <FormField
                 control={form.control}
@@ -398,7 +401,8 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
                       <FormControl>
                         <RadioGroupItem value="telegramGroup" />
                       </FormControl>
-                      <FormLabel className="font-normal cursor-pointer">
+                      <FormLabel className="font-normal cursor-pointer flex items-center">
+                        <MessageCircle className="h-4 w-4 mr-2 text-[#0088cc]" />
                         Telegram Group
                       </FormLabel>
                     </FormItem>
@@ -406,7 +410,8 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
                       <FormControl>
                         <RadioGroupItem value="fbGroup" />
                       </FormControl>
-                      <FormLabel className="font-normal cursor-pointer">
+                      <FormLabel className="font-normal cursor-pointer flex items-center">
+                        <Facebook className="h-4 w-4 mr-2 text-[#0088cc]" />
                         FB Group
                       </FormLabel>
                     </FormItem>
@@ -414,7 +419,8 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
                       <FormControl>
                         <RadioGroupItem value="personalSelection" />
                       </FormControl>
-                      <FormLabel className="font-normal cursor-pointer">
+                      <FormLabel className="font-normal cursor-pointer flex items-center">
+                        <User className="h-4 w-4 mr-2 text-[#0088cc]" />
                         Personal Selection (Recommended)
                       </FormLabel>
                     </FormItem>
@@ -422,7 +428,8 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
                       <FormControl>
                         <RadioGroupItem value="other" />
                       </FormControl>
-                      <FormLabel className="font-normal cursor-pointer">
+                      <FormLabel className="font-normal cursor-pointer flex items-center">
+                        <HelpCircle className="h-4 w-4 mr-2 text-[#0088cc]" />
                         Other
                       </FormLabel>
                     </FormItem>
