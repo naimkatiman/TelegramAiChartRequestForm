@@ -10,4 +10,17 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+  
+  /* Make placeholder text more subtle */
+  ::placeholder {
+    @apply text-muted-foreground/50 !important;
+  }
+  
+  ::-webkit-input-placeholder {
+    @apply text-muted-foreground/50 !important;
+  }
+  
+  :-ms-input-placeholder {
+    @apply text-muted-foreground/50 !important;
+  }
 }
