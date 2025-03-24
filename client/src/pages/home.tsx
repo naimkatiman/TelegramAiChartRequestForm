@@ -36,7 +36,7 @@ export default function Home() {
         <div className="w-full lg:w-2/3">
           <div className="bg-white rounded-lg shadow-md border border-border overflow-hidden">
             <div className="bg-accent text-white p-6">
-              <h1 className="text-3xl font-bold mb-2">🤖 Telegram Bot Customization Request</h1>
+              <h1 className="text-3xl font-bold mb-2 text-black">🤖 Telegram Bot Customization Request</h1>
               <p className="text-black">Configure your trading bot with preferred instruments and indicators</p>
             </div>
             

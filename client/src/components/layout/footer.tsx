@@ -8,11 +8,7 @@ export function Footer() {
           <div className="mb-4 md:mb-0">
             <p className="text-sm text-gray-400">© {new Date().getFullYear()} Telegram Bot Customization. All rights reserved.</p>
           </div>
-          <div className="flex space-x-4">
-            <Link href="/privacy" className="text-gray-400 hover:text-[#0088cc] transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="text-gray-400 hover:text-[#0088cc] transition-colors">Terms of Service</Link>
-            <Link href="/contact" className="text-gray-400 hover:text-[#0088cc] transition-colors">Contact Us</Link>
-          </div>
+          {/* Footer Links Removed */}
         </div>
       </div>
     </footer>
