@@ -443,7 +443,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
 
         {/* Special Instructions */}
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-accent border-b pb-2">🧾 Special Instructions</h2>
+          <h2 className="text-xl font-semibold text-accent border-b pb-2">Special Instructions</h2>
           <p className="text-sm mb-2">Please refer to Brolysis (free) or BroPunch (premium) for reference</p>
           
           <FormField
