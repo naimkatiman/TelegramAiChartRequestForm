@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { botSubmissionFormSchema, BotSubmissionFormValues, BotSubmission } from "@shared/schema";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -39,6 +39,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
     defaultValues: {
       requesterName: "",
       requesterEmail: "",
+      telegramPhone: "",
       equityIndices: [],
       otherEquity: "",
       forex: [],
@@ -128,6 +129,27 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
                     className="px-4 py-2 border border-border rounded-md bg-input-background focus:outline-none"
                   />
                 </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="telegramPhone"
+            render={({ field }) => (
+              <FormItem className="mt-4">
+                <FormLabel>Telegram Phone Number</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="+60113451267"
+                    {...field}
+                    className="px-4 py-2 border border-border rounded-md bg-input-background focus:outline-none"
+                  />
+                </FormControl>
+                <FormDescription className="text-xs text-muted-foreground">
+                  Enter your Telegram phone number in international format
+                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
