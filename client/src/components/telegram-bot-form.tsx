@@ -567,6 +567,46 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
             </div>
           </div>
           
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+            <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
+              <h3 className="text-base font-medium mb-2 flex items-center">
+                <LineChart className="h-4 w-4 mr-2 text-[#0088cc]" />
+                Available Symbols
+              </h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Check all symbols available for analysis
+              </p>
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
+              >
+                <ExternalLink className="h-3 w-3 mr-1" />
+                View supported symbols
+              </a>
+            </div>
+            
+            <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
+              <h3 className="text-base font-medium mb-2 flex items-center">
+                <TrendingUp className="h-4 w-4 mr-2 text-[#0088cc]" />
+                Available Indicators
+              </h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Explore all technical indicators available
+              </p>
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
+              >
+                <ExternalLink className="h-3 w-3 mr-1" />
+                View supported indicators
+              </a>
+            </div>
+          </div>
+          
           <div className="bg-muted p-4 rounded-md mt-4">
             <p className="text-sm text-muted-foreground">
               Need help? For any questions or support, please contact us at the Telegram number provided: +601169833882 (R - Naim IT)
