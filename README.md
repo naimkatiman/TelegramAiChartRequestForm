@@ -137,8 +137,6 @@ graph TD
 
 ## Support
 
-For support and questions, please contact:
-- Telegram: +601169833882 (R - Naim IT)
 
 ## License
 

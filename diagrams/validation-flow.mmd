@@ -1,0 +1,14 @@
+graph TD
+    A[User Input] --> B[React Hook Form]
+    B --> C{Zod Schema Validation}
+    C -- Valid --> D[Prepare Submission]
+    C -- Invalid --> E[Show Field Errors]
+    E --> A
+    D --> F[API Request]
+
+style A fill:#0088cc,color:#fff
+style B fill:#f9f9f9,stroke:#0088cc
+style C fill:#f9f9f9,stroke:#0088cc
+style D fill:#4CAF50,color:#fff
+style E fill:#ff5252,color:#fff
+style F fill:#4CAF50,color:#fff 

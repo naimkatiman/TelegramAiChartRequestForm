@@ -1,0 +1,30 @@
+graph TD
+    A[User Access Form] --> B[Fill Form Details]
+    B --> C{Select Trading Instruments}
+    C --> D[Equity Indices]
+    C --> E[Forex Pairs]
+    C --> F[Commodities]
+    D --> G[Configure Custom Indicators]
+    E --> G
+    F --> G
+    G --> H[Set Access Level]
+    H --> I[Submit Request]
+    I --> J{Validation}
+    J -- Success --> K[Store in Database]
+    K --> L[Send to Telegram Bot]
+    J -- Error --> M[Show Error Message]
+    M --> B
+
+style A fill:#0088cc,color:#fff
+style B fill:#f9f9f9,stroke:#0088cc
+style C fill:#f9f9f9,stroke:#0088cc
+style D fill:#f0f0f0
+style E fill:#f0f0f0
+style F fill:#f0f0f0
+style G fill:#f9f9f9,stroke:#0088cc
+style H fill:#f9f9f9,stroke:#0088cc
+style I fill:#f9f9f9,stroke:#0088cc
+style J fill:#f9f9f9,stroke:#0088cc
+style K fill:#4CAF50,color:#fff
+style L fill:#4CAF50,color:#fff
+style M fill:#ff5252,color:#fff 

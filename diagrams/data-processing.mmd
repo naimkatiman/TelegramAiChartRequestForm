@@ -1,0 +1,19 @@
+graph TD
+    A[Form Submission] --> B[Express Backend]
+    B --> C[Validate Request]
+    C --> D{Process Data}
+    D --> E[Store in PostgreSQL]
+    D --> F[Send to Telegram Bot]
+    F --> G[Get Bot Response]
+    G --> H[Update Status]
+    H --> I[WebSocket Update]
+
+style A fill:#0088cc,color:#fff
+style B fill:#f9f9f9,stroke:#0088cc
+style C fill:#f9f9f9,stroke:#0088cc
+style D fill:#f9f9f9,stroke:#0088cc
+style E fill:#4CAF50,color:#fff
+style F fill:#4CAF50,color:#fff
+style G fill:#f0f0f0
+style H fill:#4CAF50,color:#fff
+style I fill:#4CAF50,color:#fff 

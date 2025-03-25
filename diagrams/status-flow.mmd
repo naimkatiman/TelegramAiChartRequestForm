@@ -1,0 +1,15 @@
+graph LR
+    A[Submit] --> B[Pending]
+    B --> C[Processing]
+    C --> D{Decision}
+    D -- Accept --> E[Approved]
+    D -- Reject --> F[Rejected]
+    E --> G[Completed]
+
+style A fill:#0088cc,color:#fff
+style B fill:#ffd54f,color:#000
+style C fill:#ff9800,color:#fff
+style D fill:#f9f9f9,stroke:#0088cc
+style E fill:#4CAF50,color:#fff
+style F fill:#ff5252,color:#fff
+style G fill:#4CAF50,color:#fff 
