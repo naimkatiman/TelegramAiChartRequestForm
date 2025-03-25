@@ -22,7 +22,9 @@ import {
   HelpCircle,
   Bot,
   Star,
-  ExternalLink
+  ExternalLink,
+  MessageSquareCode,
+  SendHorizonal
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedHeader, AnimatedSection, AnimatedButton, AnimatedFormControls } from "@/components/form-animations";
@@ -114,285 +116,285 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
     <Form {...form}>
       <motion.form 
         onSubmit={form.handleSubmit(onSubmit)} 
-        className="p-4 md:p-6 space-y-8 max-w-4xl mx-auto"
+        className="p-6 md:p-8 space-y-8"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         {/* Requester Information */}
         <AnimatedSection delay={0}>
-          <AnimatedHeader delay={0}>Requester Information</AnimatedHeader>
+          <div className="flex items-center gap-2 mb-6">
+            <User className="h-5 w-5 text-[#0088cc]" />
+            <h2 className="text-xl font-semibold text-gray-800">Personal Information</h2>
+          </div>
           
-          <FormField
-            control={form.control}
-            name="requesterName"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="flex items-center">
-                  <User className="h-4 w-4 mr-2 text-[#0088cc]" />
-                  Name
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Enter your name"
-                    {...field}
-                    className="px-4 py-2 border border-border rounded-md bg-input-background focus:outline-none"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          
-          <FormField
-            control={form.control}
-            name="telegramPhone"
-            render={({ field }) => (
-              <FormItem className="mt-4">
-                <FormLabel className="flex items-center">
-                  <MessageCircle className="h-4 w-4 mr-2 text-[#0088cc]" />
-                  Telegram Phone Number
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="+60113451267"
-                    {...field}
-                    className="px-4 py-2 border border-border rounded-md bg-input-background focus:outline-none"
-                  />
-                </FormControl>
-                <FormDescription className="text-xs text-muted-foreground">
-                  Enter your Telegram phone number in international format
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          
-          {/* Email field removed as requested */}
+          <div className="grid gap-6">
+            <FormField
+              control={form.control}
+              name="requesterName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-gray-700">Full Name</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Enter your name"
+                      {...field}
+                      className="px-4 py-2 border-gray-200 rounded-lg bg-white focus:ring-2 focus:ring-[#0088cc] focus:border-transparent transition-all duration-200"
+                    />
+                  </FormControl>
+                  <FormMessage className="text-red-500" />
+                </FormItem>
+              )}
+            />
+            
+            <FormField
+              control={form.control}
+              name="telegramPhone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-gray-700">Telegram Phone Number</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="+60113451267"
+                      {...field}
+                      className="px-4 py-2 border-gray-200 rounded-lg bg-white focus:ring-2 focus:ring-[#0088cc] focus:border-transparent transition-all duration-200"
+                    />
+                  </FormControl>
+                  <FormDescription className="text-sm text-gray-500">
+                    Enter your Telegram phone number in international format
+                  </FormDescription>
+                  <FormMessage className="text-red-500" />
+                </FormItem>
+              )}
+            />
+          </div>
         </AnimatedSection>
 
         {/* Instrument Selection */}
         <AnimatedSection delay={0.1}>
-          <AnimatedHeader delay={0.1}>Instrument Selection</AnimatedHeader>
+          <div className="flex items-center gap-2 mb-6">
+            <LineChart className="h-5 w-5 text-[#0088cc]" />
+            <h2 className="text-xl font-semibold text-gray-800">Trading Instruments</h2>
+          </div>
           
           {/* Equity Indices */}
-          <div>
-            <h3 className="text-lg font-medium mb-3 form-section-title flex items-center">
-              <LineChart className="h-5 w-5 mr-2 text-[#0088cc]" />
-              Equity Indices
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-medium mb-4 flex items-center gap-2 text-gray-700">
+                <TrendingUp className="h-5 w-5 text-[#0088cc]" />
+                Equity Indices
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded-lg border border-gray-100">
+                <FormField
+                  control={form.control}
+                  name="equityIndices"
+                  render={() => (
+                    <FormItem>
+                      {equityIndicesOptions.map((option) => (
+                        <FormField
+                          key={option.value}
+                          control={form.control}
+                          name="equityIndices"
+                          render={({ field }) => {
+                            return (
+                              <FormItem
+                                key={option.value}
+                                className="flex flex-row items-center space-x-3 space-y-0 mb-3 group"
+                              >
+                                <FormControl>
+                                  <Checkbox
+                                    checked={field.value?.includes(option.value)}
+                                    onCheckedChange={(checked) => {
+                                      const currentValues = field.value || [];
+                                      return checked
+                                        ? field.onChange([...currentValues, option.value])
+                                        : field.onChange(
+                                            currentValues.filter((value) => value !== option.value)
+                                          );
+                                    }}
+                                    className="border-gray-300 text-[#0088cc] focus:ring-[#0088cc]"
+                                  />
+                                </FormControl>
+                                <FormLabel className="text-gray-700 cursor-pointer group-hover:text-[#0088cc] transition-colors duration-200">
+                                  {option.label}
+                                </FormLabel>
+                              </FormItem>
+                            );
+                          }}
+                        />
+                      ))}
+                      <FormMessage className="text-red-500" />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              
               <FormField
                 control={form.control}
-                name="equityIndices"
-                render={() => (
-                  <FormItem>
-                    {equityIndicesOptions.map((option) => (
-                      <FormField
-                        key={option.value}
-                        control={form.control}
-                        name="equityIndices"
-                        render={({ field }) => {
-                          return (
-                            <FormItem
-                              key={option.value}
-                              className="flex flex-row items-start space-x-3 space-y-0 mb-2"
-                            >
-                              <FormControl>
-                                <Checkbox
-                                  checked={field.value?.includes(option.value)}
-                                  onCheckedChange={(checked) => {
-                                    const currentValues = field.value || [];
-                                    return checked
-                                      ? field.onChange([...currentValues, option.value])
-                                      : field.onChange(
-                                          currentValues.filter((value) => value !== option.value)
-                                        );
-                                  }}
-                                />
-                              </FormControl>
-                              <FormLabel className="font-normal cursor-pointer">
-                                {option.label}
-                              </FormLabel>
-                            </FormItem>
-                          );
-                        }}
+                name="otherEquity"
+                render={({ field }) => (
+                  <FormItem className="mt-4">
+                    <FormLabel className="text-gray-700">Other Equity Indices</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter additional equity indices"
+                        {...field}
+                        className="px-4 py-2 border-gray-200 rounded-lg bg-white focus:ring-2 focus:ring-[#0088cc] focus:border-transparent transition-all duration-200"
                       />
-                    ))}
-                    <FormMessage />
+                    </FormControl>
+                    <FormMessage className="text-red-500" />
                   </FormItem>
                 )}
               />
             </div>
             
-            <FormField
-              control={form.control}
-              name="otherEquity"
-              render={({ field }) => (
-                <FormItem className="mt-2">
-                  <FormLabel className="text-sm font-medium">Other Equity Indices</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Enter other equity indices"
-                      {...field}
-                      className="px-4 py-2 border border-border rounded-md bg-input-background focus:outline-none"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-          
-          {/* Forex */}
-          <div>
-            <h3 className="text-lg font-medium mb-3 form-section-title flex items-center">
-              <DollarSign className="h-5 w-5 mr-2 text-[#0088cc]" />
-              Forex
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {/* Forex Section */}
+            <div>
+              <h3 className="text-lg font-medium mb-4 flex items-center gap-2 text-gray-700">
+                <DollarSign className="h-5 w-5 text-[#0088cc]" />
+                Forex Pairs
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded-lg border border-gray-100">
+                <FormField
+                  control={form.control}
+                  name="forex"
+                  render={() => (
+                    <FormItem>
+                      {forexOptions.map((option) => (
+                        <FormField
+                          key={option.value}
+                          control={form.control}
+                          name="forex"
+                          render={({ field }) => {
+                            return (
+                              <FormItem
+                                key={option.value}
+                                className="flex flex-row items-center space-x-3 space-y-0 mb-3 group"
+                              >
+                                <FormControl>
+                                  <Checkbox
+                                    checked={field.value?.includes(option.value)}
+                                    onCheckedChange={(checked) => {
+                                      const currentValues = field.value || [];
+                                      return checked
+                                        ? field.onChange([...currentValues, option.value])
+                                        : field.onChange(
+                                            currentValues.filter((value) => value !== option.value)
+                                          );
+                                    }}
+                                    className="border-gray-300 text-[#0088cc] focus:ring-[#0088cc]"
+                                  />
+                                </FormControl>
+                                <FormLabel className="text-gray-700 cursor-pointer group-hover:text-[#0088cc] transition-colors duration-200">
+                                  {option.label}
+                                </FormLabel>
+                              </FormItem>
+                            );
+                          }}
+                        />
+                      ))}
+                      <FormMessage className="text-red-500" />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              
               <FormField
                 control={form.control}
-                name="forex"
-                render={() => (
-                  <FormItem>
-                    {forexOptions.map((option) => (
-                      <FormField
-                        key={option.value}
-                        control={form.control}
-                        name="forex"
-                        render={({ field }) => {
-                          return (
-                            <FormItem
-                              key={option.value}
-                              className="flex flex-row items-start space-x-3 space-y-0 mb-2"
-                            >
-                              <FormControl>
-                                <Checkbox
-                                  checked={field.value?.includes(option.value)}
-                                  onCheckedChange={(checked) => {
-                                    const currentValues = field.value || [];
-                                    return checked
-                                      ? field.onChange([...currentValues, option.value])
-                                      : field.onChange(
-                                          currentValues.filter((value) => value !== option.value)
-                                        );
-                                  }}
-                                />
-                              </FormControl>
-                              <FormLabel className="font-normal cursor-pointer">
-                                {option.label}
-                              </FormLabel>
-                            </FormItem>
-                          );
-                        }}
+                name="otherForex"
+                render={({ field }) => (
+                  <FormItem className="mt-4">
+                    <FormLabel className="text-gray-700">Other Forex Pairs</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter additional forex pairs"
+                        {...field}
+                        className="px-4 py-2 border-gray-200 rounded-lg bg-white focus:ring-2 focus:ring-[#0088cc] focus:border-transparent transition-all duration-200"
                       />
-                    ))}
-                    <FormMessage />
+                    </FormControl>
+                    <FormMessage className="text-red-500" />
                   </FormItem>
                 )}
               />
             </div>
             
-            <FormField
-              control={form.control}
-              name="otherForex"
-              render={({ field }) => (
-                <FormItem className="mt-2">
-                  <FormLabel className="text-sm font-medium">Other Forex Pairs</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Enter other forex pairs"
-                      {...field}
-                      className="px-4 py-2 border border-border rounded-md bg-input-background focus:outline-none"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-          
-          {/* Commodities */}
-          <div>
-            <h3 className="text-lg font-medium mb-3 form-section-title flex items-center">
-              <Gem className="h-5 w-5 mr-2 text-[#0088cc]" />
-              Commodities
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {/* Commodities Section */}
+            <div>
+              <h3 className="text-lg font-medium mb-4 flex items-center gap-2 text-gray-700">
+                <Gem className="h-5 w-5 text-[#0088cc]" />
+                Commodities
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded-lg border border-gray-100">
+                <FormField
+                  control={form.control}
+                  name="commodities"
+                  render={() => (
+                    <FormItem>
+                      {commoditiesOptions.map((option) => (
+                        <FormField
+                          key={option.value}
+                          control={form.control}
+                          name="commodities"
+                          render={({ field }) => {
+                            return (
+                              <FormItem
+                                key={option.value}
+                                className="flex flex-row items-center space-x-3 space-y-0 mb-3 group"
+                              >
+                                <FormControl>
+                                  <Checkbox
+                                    checked={field.value?.includes(option.value)}
+                                    onCheckedChange={(checked) => {
+                                      const currentValues = field.value || [];
+                                      return checked
+                                        ? field.onChange([...currentValues, option.value])
+                                        : field.onChange(
+                                            currentValues.filter((value) => value !== option.value)
+                                          );
+                                    }}
+                                    className="border-gray-300 text-[#0088cc] focus:ring-[#0088cc]"
+                                  />
+                                </FormControl>
+                                <FormLabel className="text-gray-700 cursor-pointer group-hover:text-[#0088cc] transition-colors duration-200">
+                                  {option.label}
+                                </FormLabel>
+                              </FormItem>
+                            );
+                          }}
+                        />
+                      ))}
+                      <FormMessage className="text-red-500" />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              
               <FormField
                 control={form.control}
-                name="commodities"
-                render={() => (
-                  <FormItem>
-                    {commoditiesOptions.map((option) => (
-                      <FormField
-                        key={option.value}
-                        control={form.control}
-                        name="commodities"
-                        render={({ field }) => {
-                          return (
-                            <FormItem
-                              key={option.value}
-                              className="flex flex-row items-start space-x-3 space-y-0 mb-2"
-                            >
-                              <FormControl>
-                                <Checkbox
-                                  checked={field.value?.includes(option.value)}
-                                  onCheckedChange={(checked) => {
-                                    const currentValues = field.value || [];
-                                    return checked
-                                      ? field.onChange([...currentValues, option.value])
-                                      : field.onChange(
-                                          currentValues.filter((value) => value !== option.value)
-                                        );
-                                  }}
-                                />
-                              </FormControl>
-                              <FormLabel className="font-normal cursor-pointer">
-                                {option.label}
-                              </FormLabel>
-                            </FormItem>
-                          );
-                        }}
+                name="otherCommodities"
+                render={({ field }) => (
+                  <FormItem className="mt-4">
+                    <FormLabel className="text-gray-700">Other Commodities</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter additional commodities"
+                        {...field}
+                        className="px-4 py-2 border-gray-200 rounded-lg bg-white focus:ring-2 focus:ring-[#0088cc] focus:border-transparent transition-all duration-200"
                       />
-                    ))}
-                    <FormMessage />
+                    </FormControl>
+                    <FormMessage className="text-red-500" />
                   </FormItem>
                 )}
               />
             </div>
-            
-            <FormField
-              control={form.control}
-              name="otherCommodities"
-              render={({ field }) => (
-                <FormItem className="mt-2">
-                  <FormLabel className="text-sm font-medium">Other Commodities</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Enter other commodities"
-                      {...field}
-                      className="px-4 py-2 border border-border rounded-md bg-input-background focus:outline-none"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
           </div>
         </AnimatedSection>
 
-        {/* Preferred Indicators */}
+        {/* Custom Indicators */}
         <AnimatedSection delay={0.2}>
-          <AnimatedHeader delay={0.2}>Preferred Indicators</AnimatedHeader>
-          <div className="bg-muted p-4 rounded-md mb-4">
-            <h3 className="text-base font-medium mb-2 form-section-title">Default Indicators</h3>
-            <div className="space-y-2 text-sm text-muted-foreground">
-              <p><strong>Equity Indices:</strong> 200-EMA, MACD, RSI</p>
-              <p><strong>Forex:</strong> 50-EMA, MACD, RSI</p>
-              <p><strong>Commodities:</strong> Bollinger Bands, Super Trend, RSI</p>
-            </div>
+          <div className="flex items-center gap-2 mb-6">
+            <MessageSquareCode className="h-5 w-5 text-[#0088cc]" />
+            <h2 className="text-xl font-semibold text-gray-800">Custom Settings</h2>
           </div>
           
           <FormField
@@ -400,271 +402,149 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
             name="customIndicators"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-sm font-medium">Custom Indicators (max 3 per instrument)</FormLabel>
+                <FormLabel className="text-gray-700">Custom Indicators</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Specify custom indicators if different from defaults"
+                    placeholder="Enter your custom indicators and settings"
                     {...field}
-                    className="px-4 py-2 border border-border rounded-md bg-input-background focus:outline-none"
-                    rows={3}
+                    className="min-h-[120px] px-4 py-3 border-gray-200 rounded-lg bg-white focus:ring-2 focus:ring-[#0088cc] focus:border-transparent transition-all duration-200"
                   />
                 </FormControl>
-                <FormMessage />
+                <FormDescription className="text-sm text-gray-500">
+                  Specify any custom indicators or settings you'd like to add to your bot
+                </FormDescription>
+                <FormMessage className="text-red-500" />
               </FormItem>
             )}
           />
         </AnimatedSection>
 
-        {/* Premium Bot Access */}
+        {/* Premium Access */}
         <AnimatedSection delay={0.3}>
-          <AnimatedHeader delay={0.3}>Premium Bot Access</AnimatedHeader>
-          <p className="text-sm text-muted-foreground mb-3">Select who gets premium bot access. Please note that verification will take time (approximately 1 day) and requires a Telegram ID to proceed.</p>
+          <div className="flex items-center gap-2 mb-6">
+            <Star className="h-5 w-5 text-[#0088cc]" />
+            <h2 className="text-xl font-semibold text-gray-800">Access Level</h2>
+          </div>
           
           <FormField
             control={form.control}
             name="premiumAccess"
             render={({ field }) => (
-              <FormItem className="space-y-2">
+              <FormItem>
                 <FormControl>
                   <RadioGroup
                     onValueChange={field.onChange}
                     defaultValue={field.value}
-                    value={field.value}
-                    className="space-y-2"
+                    className="grid gap-4"
                   >
                     <FormItem className="flex items-center space-x-3 space-y-0">
                       <FormControl>
-                        <RadioGroupItem value="telegramGroup" />
+                        <RadioGroupItem
+                          value="roboClient"
+                          className="border-gray-300 text-[#0088cc] focus:ring-[#0088cc]"
+                        />
                       </FormControl>
-                      <FormLabel className="font-normal cursor-pointer flex items-center">
-                        <MessageCircle className="h-4 w-4 mr-2 text-[#0088cc]" />
-                        Telegram Group
+                      <FormLabel className="text-gray-700 cursor-pointer">
+                        Robo Client
                       </FormLabel>
                     </FormItem>
                     <FormItem className="flex items-center space-x-3 space-y-0">
                       <FormControl>
-                        <RadioGroupItem value="fbGroup" />
+                        <RadioGroupItem
+                          value="other"
+                          className="border-gray-300 text-[#0088cc] focus:ring-[#0088cc]"
+                        />
                       </FormControl>
-                      <FormLabel className="font-normal cursor-pointer flex items-center">
-                        <Facebook className="h-4 w-4 mr-2 text-[#0088cc]" />
-                        FB Group
-                      </FormLabel>
-                    </FormItem>
-                    <FormItem className="flex items-center space-x-3 space-y-0">
-                      <FormControl>
-                        <RadioGroupItem value="personalSelection" />
-                      </FormControl>
-                      <FormLabel className="font-normal cursor-pointer flex items-center">
-                        <User className="h-4 w-4 mr-2 text-[#0088cc]" />
-                        Personal Selection (Recommended)
-                      </FormLabel>
-                    </FormItem>
-                    <FormItem className="flex items-center space-x-3 space-y-0">
-                      <FormControl>
-                        <RadioGroupItem value="other" />
-                      </FormControl>
-                      <FormLabel className="font-normal cursor-pointer flex items-center">
-                        <HelpCircle className="h-4 w-4 mr-2 text-[#0088cc]" />
+                      <FormLabel className="text-gray-700 cursor-pointer">
                         Other
                       </FormLabel>
                     </FormItem>
                   </RadioGroup>
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="text-red-500" />
               </FormItem>
             )}
           />
-          
+
           {showOtherAccess && (
             <FormField
               control={form.control}
               name="otherAccess"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="mt-4">
+                  <FormLabel className="text-gray-700">Specify Access Type</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="Specify other premium access"
+                      placeholder="Enter your access type"
                       {...field}
-                      className="px-4 py-2 border border-border rounded-md bg-input-background focus:outline-none"
+                      className="px-4 py-2 border-gray-200 rounded-lg bg-white focus:ring-2 focus:ring-[#0088cc] focus:border-transparent transition-all duration-200"
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-red-500" />
                 </FormItem>
               )}
             />
           )}
-          
-          <div className="bg-muted p-4 rounded-md mt-2 border-l-4 border-[#0088cc]">
-            <p className="text-sm text-muted-foreground">You can brand this bot for selected VIP clients to boost value and promote RoboForex trading under your ID. A Telegram ID will be required during the verification process.</p>
-          </div>
         </AnimatedSection>
 
         {/* Special Instructions */}
         <AnimatedSection delay={0.4}>
-          <AnimatedHeader delay={0.4}>Special Instructions</AnimatedHeader>
-          <p className="text-sm text-muted-foreground mb-2">Please refer to Brolysis (free) or BroPunch (premium) for reference</p>
+          <div className="flex items-center gap-2 mb-6">
+            <MessageSquareCode className="h-5 w-5 text-[#0088cc]" />
+            <h2 className="text-xl font-semibold text-gray-800">Additional Instructions</h2>
+          </div>
           
           <FormField
             control={form.control}
             name="specialInstructions"
             render={({ field }) => (
               <FormItem>
+                <FormLabel className="text-gray-700">Special Instructions</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Describe specific customizations, prompts, features, or any additional requirements..."
+                    placeholder="Enter any special instructions or requirements"
                     {...field}
-                    className="px-4 py-2 border border-border rounded-md bg-input-background focus:outline-none"
-                    rows={4}
+                    className="min-h-[120px] px-4 py-3 border-gray-200 rounded-lg bg-white focus:ring-2 focus:ring-[#0088cc] focus:border-transparent transition-all duration-200"
                   />
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="text-red-500" />
               </FormItem>
             )}
           />
         </AnimatedSection>
 
-        {/* Form Controls */}
-        <AnimatedFormControls>
-          <AnimatedButton>
-            <Button
-              type="button"
-              variant="outline"
-              onClick={handleReset}
-              className="px-6 py-2 form-button secondary-button flex items-center"
-            >
-              Reset Form
-            </Button>
-          </AnimatedButton>
-          
-          <AnimatedButton>
+        {/* Submit Button */}
+        <AnimatedSection delay={0.5}>
+          <div className="flex gap-4 pt-4">
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="px-6 py-2 form-button primary-button flex items-center"
+              className="flex-1 bg-[#0088cc] hover:bg-[#006699] text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
             >
               {isSubmitting ? (
                 <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  <Loader2 className="h-4 w-4 animate-spin" />
                   Submitting...
                 </>
               ) : (
                 <>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-                  </svg>
+                  <SendHorizonal className="h-4 w-4" />
                   Submit Request
                 </>
               )}
             </Button>
-          </AnimatedButton>
-        </AnimatedFormControls>
-        
-        {/* Help & Resources Section */}
-        <section className="space-y-6 mt-12">
-          <AnimatedHeader delay={0.5}>Help & Resources</AnimatedHeader>
-          
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
-              <h3 className="text-base font-medium mb-2 flex items-center">
-                <Bot className="h-4 w-4 mr-2 text-[#0088cc]" />
-                Free Version: BroLysis
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                Try our free version to experience basic market analysis features
-              </p>
-              <a 
-                href="https://t.me/Robo_Market_Analysis_Bot" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
-              >
-                <ExternalLink className="h-3 w-3 mr-1" />
-                Open BroLysis Bot
-              </a>
-            </div>
             
-            <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
-              <h3 className="text-base font-medium mb-2 flex items-center">
-                <Star className="h-4 w-4 mr-2 text-[#0088cc]" />
-                Premium Version: BroPunch
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                Access advanced features with our premium version
-              </p>
-              <a 
-                href="https://t.me/Robo_Lysis_301_Bot" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
-              >
-                <ExternalLink className="h-3 w-3 mr-1" />
-                Open BroPunch Bot
-              </a>
-            </div>
-          </motion.div>
-          
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
-              <h3 className="text-base font-medium mb-2 flex items-center">
-                <LineChart className="h-4 w-4 mr-2 text-[#0088cc]" />
-                Available Symbols
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                Check all symbols available for analysis
-              </p>
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
-              >
-                <ExternalLink className="h-3 w-3 mr-1" />
-                View supported symbols
-              </a>
-            </div>
-            
-            <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
-              <h3 className="text-base font-medium mb-2 flex items-center">
-                <TrendingUp className="h-4 w-4 mr-2 text-[#0088cc]" />
-                Available Indicators
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                Explore all technical indicators available
-              </p>
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
-              >
-                <ExternalLink className="h-3 w-3 mr-1" />
-                View supported indicators
-              </a>
-            </div>
-          </motion.div>
-          
-          <motion.div 
-            className="bg-muted p-4 rounded-md"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-            whileHover={{ y: -5, boxShadow: "0 5px 15px rgba(0, 0, 0, 0.1)" }}
-          >
-            <p className="text-sm text-muted-foreground">
-              Need help? For any questions or support, please contact us at the Telegram number provided: +601169833882 (R - Naim IT)
-            </p>
-          </motion.div>
-        </section>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={handleReset}
+              disabled={isSubmitting}
+              className="px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors duration-200"
+            >
+              Reset
+            </Button>
+          </div>
+        </AnimatedSection>
       </motion.form>
     </Form>
   );
