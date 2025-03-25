@@ -608,11 +608,16 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
               </div>
             </div>
             
-            <div className="bg-muted p-4 rounded-md">
+            <motion.div 
+              className="bg-muted p-4 rounded-md"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
               <p className="text-sm text-muted-foreground">
                 Need help? For any questions or support, please contact us at the Telegram number provided: +601169833882 (R - Naim IT)
               </p>
-            </div>
+            </motion.div>
           </div>
         </AnimatedSection>
 
