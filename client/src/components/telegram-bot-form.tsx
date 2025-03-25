@@ -527,84 +527,88 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
         {/* Help & Resources Section */}
         <AnimatedSection delay={0.5}>
           <AnimatedHeader delay={0.5}>Help & Resources</AnimatedHeader>
-          <div className="space-y-2 p-4 bg-muted rounded-md">
-            <div className="border-l-4 border-[#0088cc] pl-3 py-2">
-              <h3 className="text-base font-medium mb-2 flex items-center">
-                <Bot className="h-4 w-4 mr-2 text-[#0088cc]" />
-                Free Version: BroLysis
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                Try our free version to experience basic market analysis features
-              </p>
-              <a 
-                href="https://t.me/Robo_Market_Analysis_Bot" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
-              >
-                <ExternalLink className="h-3 w-3 mr-1" />
-                Open BroLysis Bot
-              </a>
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
+                <h3 className="text-base font-medium mb-2 flex items-center">
+                  <Bot className="h-4 w-4 mr-2 text-[#0088cc]" />
+                  Free Version: BroLysis
+                </h3>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Try our free version to experience basic market analysis features
+                </p>
+                <a 
+                  href="https://t.me/Robo_Market_Analysis_Bot" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
+                >
+                  <ExternalLink className="h-3 w-3 mr-1" />
+                  Open BroLysis Bot
+                </a>
+              </div>
+              
+              <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
+                <h3 className="text-base font-medium mb-2 flex items-center">
+                  <Star className="h-4 w-4 mr-2 text-[#0088cc]" />
+                  Premium Version: BroPunch
+                </h3>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Access advanced features with our premium version
+                </p>
+                <a 
+                  href="https://t.me/Robo_Lysis_301_Bot" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
+                >
+                  <ExternalLink className="h-3 w-3 mr-1" />
+                  Open BroPunch Bot
+                </a>
+              </div>
             </div>
             
-            <div className="border-l-4 border-[#0088cc] pl-3 py-2">
-              <h3 className="text-base font-medium mb-2 flex items-center">
-                <Star className="h-4 w-4 mr-2 text-[#0088cc]" />
-                Premium Version: BroPunch
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                Access advanced features with our premium version
-              </p>
-              <a 
-                href="https://t.me/Robo_Lysis_301_Bot" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
-              >
-                <ExternalLink className="h-3 w-3 mr-1" />
-                Open BroPunch Bot
-              </a>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
+                <h3 className="text-base font-medium mb-2 flex items-center">
+                  <LineChart className="h-4 w-4 mr-2 text-[#0088cc]" />
+                  Available Symbols
+                </h3>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Check all symbols available for analysis
+                </p>
+                <a 
+                  href="#" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
+                >
+                  <ExternalLink className="h-3 w-3 mr-1" />
+                  View supported symbols
+                </a>
+              </div>
+              
+              <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
+                <h3 className="text-base font-medium mb-2 flex items-center">
+                  <TrendingUp className="h-4 w-4 mr-2 text-[#0088cc]" />
+                  Available Indicators
+                </h3>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Explore all technical indicators available
+                </p>
+                <a 
+                  href="#" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
+                >
+                  <ExternalLink className="h-3 w-3 mr-1" />
+                  View supported indicators
+                </a>
+              </div>
             </div>
             
-            <div className="border-l-4 border-[#0088cc] pl-3 py-2">
-              <h3 className="text-base font-medium mb-2 flex items-center">
-                <LineChart className="h-4 w-4 mr-2 text-[#0088cc]" />
-                Available Symbols
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                Check all symbols available for analysis
-              </p>
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
-              >
-                <ExternalLink className="h-3 w-3 mr-1" />
-                View supported symbols
-              </a>
-            </div>
-            
-            <div className="border-l-4 border-[#0088cc] pl-3 py-2">
-              <h3 className="text-base font-medium mb-2 flex items-center">
-                <TrendingUp className="h-4 w-4 mr-2 text-[#0088cc]" />
-                Available Indicators
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                Explore all technical indicators available
-              </p>
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
-              >
-                <ExternalLink className="h-3 w-3 mr-1" />
-                View supported indicators
-              </a>
-            </div>
-            
-            <div className="mt-4 pt-4 border-t border-border">
+            <div className="bg-muted p-4 rounded-md">
               <p className="text-sm text-muted-foreground">
                 Need help? For any questions or support, please contact us at the Telegram number provided: +601169833882 (R - Naim IT)
               </p>
