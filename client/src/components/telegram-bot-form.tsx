@@ -19,7 +19,10 @@ import {
   Users,
   Facebook,
   User,
-  HelpCircle
+  HelpCircle,
+  Bot,
+  Star,
+  ExternalLink
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedHeader, AnimatedSection, AnimatedButton, AnimatedFormControls } from "@/components/form-animations";
@@ -39,7 +42,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
     defaultValues: {
       requesterName: "",
       requesterEmail: "",
-      telegramPhone: "",
+      telegramPhone: "+601169833882",
       equityIndices: [],
       otherEquity: "",
       forex: [],
@@ -85,6 +88,10 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
     { value: "SP500", label: "S&P 500" },
     { value: "TSLA", label: "Tesla (TSLA)" },
     { value: "NVDA", label: "Nvidia (NVDA)" },
+    { value: "AAPL", label: "Apple (AAPL)" },
+    { value: "AMZN", label: "Amazon (AMZN)" },
+    { value: "GOOG", label: "Google (GOOG)" },
+    { value: "META", label: "Meta (META)" },
   ];
 
   // Forex options
@@ -107,7 +114,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
     <Form {...form}>
       <motion.form 
         onSubmit={form.handleSubmit(onSubmit)} 
-        className="p-6 space-y-8"
+        className="p-4 md:p-6 space-y-8 max-w-4xl mx-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -121,7 +128,10 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
             name="requesterName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel className="flex items-center">
+                  <User className="h-4 w-4 mr-2 text-[#0088cc]" />
+                  Name
+                </FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Enter your name"
@@ -139,7 +149,10 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
             name="telegramPhone"
             render={({ field }) => (
               <FormItem className="mt-4">
-                <FormLabel>Telegram Phone Number</FormLabel>
+                <FormLabel className="flex items-center">
+                  <MessageCircle className="h-4 w-4 mr-2 text-[#0088cc]" />
+                  Telegram Phone Number
+                </FormLabel>
                 <FormControl>
                   <Input
                     placeholder="+60113451267"
@@ -511,6 +524,56 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
         </AnimatedSection>
 
         {/* Form Controls */}
+        {/* Help & Resources Section */}
+        <AnimatedSection delay={0.5}>
+          <AnimatedHeader delay={0.5}>Help & Resources</AnimatedHeader>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
+              <h3 className="text-base font-medium mb-2 flex items-center">
+                <Bot className="h-4 w-4 mr-2 text-[#0088cc]" />
+                Free Version: BroLysis
+              </h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Try our free version to experience basic market analysis features
+              </p>
+              <a 
+                href="https://t.me/Robo_Market_Analysis_Bot" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
+              >
+                <ExternalLink className="h-3 w-3 mr-1" />
+                Open BroLysis Bot
+              </a>
+            </div>
+            
+            <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
+              <h3 className="text-base font-medium mb-2 flex items-center">
+                <Star className="h-4 w-4 mr-2 text-[#0088cc]" />
+                Premium Version: BroPunch
+              </h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Access advanced features with our premium version
+              </p>
+              <a 
+                href="https://t.me/Robo_Lysis_301_Bot" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
+              >
+                <ExternalLink className="h-3 w-3 mr-1" />
+                Open BroPunch Bot
+              </a>
+            </div>
+          </div>
+          
+          <div className="bg-muted p-4 rounded-md mt-4">
+            <p className="text-sm text-muted-foreground">
+              Need help? For any questions or support, please contact us at the Telegram number provided: +601169833882 (R - Naim IT)
+            </p>
+          </div>
+        </AnimatedSection>
+
         <AnimatedFormControls>
           <AnimatedButton>
             <Button
