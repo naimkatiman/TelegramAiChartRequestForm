@@ -525,96 +525,111 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
 
         {/* Form Controls */}
         {/* Help & Resources Section */}
-        <AnimatedSection delay={0.5}>
+        <section className="space-y-6 mb-8">
           <AnimatedHeader delay={0.5}>Help & Resources</AnimatedHeader>
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
-                <h3 className="text-base font-medium mb-2 flex items-center">
-                  <Bot className="h-4 w-4 mr-2 text-[#0088cc]" />
-                  Free Version: BroLysis
-                </h3>
-                <p className="text-sm text-muted-foreground mb-3">
-                  Try our free version to experience basic market analysis features
-                </p>
-                <a 
-                  href="https://t.me/Robo_Market_Analysis_Bot" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
-                >
-                  <ExternalLink className="h-3 w-3 mr-1" />
-                  Open BroLysis Bot
-                </a>
-              </div>
-              
-              <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
-                <h3 className="text-base font-medium mb-2 flex items-center">
-                  <Star className="h-4 w-4 mr-2 text-[#0088cc]" />
-                  Premium Version: BroPunch
-                </h3>
-                <p className="text-sm text-muted-foreground mb-3">
-                  Access advanced features with our premium version
-                </p>
-                <a 
-                  href="https://t.me/Robo_Lysis_301_Bot" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
-                >
-                  <ExternalLink className="h-3 w-3 mr-1" />
-                  Open BroPunch Bot
-                </a>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
-                <h3 className="text-base font-medium mb-2 flex items-center">
-                  <LineChart className="h-4 w-4 mr-2 text-[#0088cc]" />
-                  Available Symbols
-                </h3>
-                <p className="text-sm text-muted-foreground mb-3">
-                  Check all symbols available for analysis
-                </p>
-                <a 
-                  href="#" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
-                >
-                  <ExternalLink className="h-3 w-3 mr-1" />
-                  View supported symbols
-                </a>
-              </div>
-              
-              <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
-                <h3 className="text-base font-medium mb-2 flex items-center">
-                  <TrendingUp className="h-4 w-4 mr-2 text-[#0088cc]" />
-                  Available Indicators
-                </h3>
-                <p className="text-sm text-muted-foreground mb-3">
-                  Explore all technical indicators available
-                </p>
-                <a 
-                  href="#" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
-                >
-                  <ExternalLink className="h-3 w-3 mr-1" />
-                  View supported indicators
-                </a>
-              </div>
-            </div>
-            
-            <div className="bg-muted p-4 rounded-md">
-              <p className="text-sm text-muted-foreground">
-                Need help? For any questions or support, please contact us at the Telegram number provided: +601169833882 (R - Naim IT)
+          
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
+              <h3 className="text-base font-medium mb-2 flex items-center">
+                <Bot className="h-4 w-4 mr-2 text-[#0088cc]" />
+                Free Version: BroLysis
+              </h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Try our free version to experience basic market analysis features
               </p>
+              <a 
+                href="https://t.me/Robo_Market_Analysis_Bot" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
+              >
+                <ExternalLink className="h-3 w-3 mr-1" />
+                Open BroLysis Bot
+              </a>
             </div>
-          </div>
-        </AnimatedSection>
+            
+            <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
+              <h3 className="text-base font-medium mb-2 flex items-center">
+                <Star className="h-4 w-4 mr-2 text-[#0088cc]" />
+                Premium Version: BroPunch
+              </h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Access advanced features with our premium version
+              </p>
+              <a 
+                href="https://t.me/Robo_Lysis_301_Bot" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
+              >
+                <ExternalLink className="h-3 w-3 mr-1" />
+                Open BroPunch Bot
+              </a>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
+              <h3 className="text-base font-medium mb-2 flex items-center">
+                <LineChart className="h-4 w-4 mr-2 text-[#0088cc]" />
+                Available Symbols
+              </h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Check all symbols available for analysis
+              </p>
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
+              >
+                <ExternalLink className="h-3 w-3 mr-1" />
+                View supported symbols
+              </a>
+            </div>
+            
+            <div className="bg-muted p-4 rounded-md border-l-4 border-[#0088cc]">
+              <h3 className="text-base font-medium mb-2 flex items-center">
+                <TrendingUp className="h-4 w-4 mr-2 text-[#0088cc]" />
+                Available Indicators
+              </h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Explore all technical indicators available
+              </p>
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#0088cc] text-sm font-medium flex items-center hover:underline"
+              >
+                <ExternalLink className="h-3 w-3 mr-1" />
+                View supported indicators
+              </a>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            className="bg-muted p-4 rounded-md"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            whileHover={{ y: -5, boxShadow: "0 5px 15px rgba(0, 0, 0, 0.1)" }}
+          >
+            <p className="text-sm text-muted-foreground">
+              Need help? For any questions or support, please contact us at the Telegram number provided: +601169833882 (R - Naim IT)
+            </p>
+          </motion.div>
+        </section>
 
         <AnimatedFormControls>
           <AnimatedButton>
