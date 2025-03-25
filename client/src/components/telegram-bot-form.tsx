@@ -120,7 +120,7 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
             name="requesterName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Full Name</FormLabel>
+                <FormLabel>Name</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Enter your name"

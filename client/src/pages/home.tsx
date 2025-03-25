@@ -53,7 +53,7 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: 0.1 }}
                   className="text-3xl font-bold text-black"
                 >
-                  Telegram Bot Customization Request
+                  Telegram Bot Customization Request - IB
                 </motion.h1>
               </div>
               <motion.p 

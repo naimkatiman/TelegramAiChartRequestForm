@@ -22,6 +22,7 @@ export const botSubmissions = pgTable("bot_submissions", {
   referenceCode: text("reference_code").notNull().unique(),
   requesterName: text("requester_name").notNull(),
   requesterEmail: text("requester_email").notNull(),
+  telegramPhone: text("telegram_phone"),
   equityIndices: jsonb("equity_indices"),
   otherEquity: text("other_equity"),
   forex: jsonb("forex"),
@@ -45,6 +46,7 @@ export const insertBotSubmissionSchema = createInsertSchema(botSubmissions).omit
 export const botSubmissionFormSchema = insertBotSubmissionSchema.extend({
   requesterName: z.string().min(2, { message: "Name must be at least 2 characters" }),
   requesterEmail: z.string().email({ message: "Please enter a valid email address" }),
+  telegramPhone: z.string().optional(),
 }).omit({
   referenceCode: true,  // Reference code is generated server-side
 });
