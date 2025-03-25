@@ -524,8 +524,43 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
         </AnimatedSection>
 
         {/* Form Controls */}
+        <AnimatedFormControls>
+          <AnimatedButton>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={handleReset}
+              className="px-6 py-2 form-button secondary-button flex items-center"
+            >
+              Reset Form
+            </Button>
+          </AnimatedButton>
+          
+          <AnimatedButton>
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="px-6 py-2 form-button primary-button flex items-center"
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                <>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+                  </svg>
+                  Submit Request
+                </>
+              )}
+            </Button>
+          </AnimatedButton>
+        </AnimatedFormControls>
+        
         {/* Help & Resources Section */}
-        <section className="space-y-6 mb-8">
+        <section className="space-y-6 mt-12">
           <AnimatedHeader delay={0.5}>Help & Resources</AnimatedHeader>
           
           <motion.div 
@@ -630,41 +665,6 @@ export function TelegramBotForm({ onSubmissionSuccess, onSubmissionError }: Tele
             </p>
           </motion.div>
         </section>
-
-        <AnimatedFormControls>
-          <AnimatedButton>
-            <Button
-              type="button"
-              variant="outline"
-              onClick={handleReset}
-              className="px-6 py-2 form-button secondary-button flex items-center"
-            >
-              Reset Form
-            </Button>
-          </AnimatedButton>
-          
-          <AnimatedButton>
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="px-6 py-2 form-button primary-button flex items-center"
-            >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Submitting...
-                </>
-              ) : (
-                <>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-                  </svg>
-                  Submit Request
-                </>
-              )}
-            </Button>
-          </AnimatedButton>
-        </AnimatedFormControls>
       </motion.form>
     </Form>
   );
